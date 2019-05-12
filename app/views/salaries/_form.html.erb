@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+<div class="panel-body">
+
+<%= form_with(model: salary, local: true) do |form| %>
+  <div class="form-group">
+  <% if salary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(salary.errors.count, "error") %> prohibited this salary from being saved:</h2>
+
+      <ul>
+      <% salary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Año %>
+    <%= form.text_field :fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Valor %>
+    <%= form.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Descripcion %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  </div>
+<% end %>
+  </div>
+  </div>

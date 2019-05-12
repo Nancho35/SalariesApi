@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Salaries</h1>
+
+<table class="table table-striped table-bordered table-hover table-sm ">
+  <thead>
+    <tr>
+      <th>Fecha(Año)</th>
+      <th>Valor</th>
+      <th>Descripcion</th>
+      <th colspan="3">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salaries.each do |salary| %>
+      <tr>
+        <td><%= salary.fecha %></td>
+        <td><%= salary.valor %></td>
+        <td><%= salary.descripcion %></td>
+        <td><%= link_to 'Mostrar', salary , class: 'label label-info'%></td>
+        <td><%= link_to 'Editar', edit_salary_path(salary) , class: 'label label-success'%></td>
+        <td><%= button_to 'Eliminar', salary, method: :delete,class: 'button', :onclick => "return confirm('¿Esta seguro de eliminar este registro?')" %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Salary', new_salary_path %>
