@@ -1,5 +1,5 @@
 class ChangeFechaToBeStringInSalaries < ActiveRecord::Migration[5.2]
-  def change
+  def down
     change_column :salaries, :fecha, :string
   end
 end
