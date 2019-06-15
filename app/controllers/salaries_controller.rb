@@ -69,6 +69,6 @@ class SalariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def salary_params
-      params.require(:salary).permit(:fecha, :valor, :descripcion)
+      params.require(:salary).permit(:fecha, :valor,:aux_transporte, :descripcion)
     end
 end
